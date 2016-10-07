@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>~SHINE~</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+    <link href="assets/css/lrtk.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <style>
+*{margin: 0; padding: 0;}
+
+.ta_c{text-align: center;
+margin-top: 5px;}
+
+@-webkit-keyframes rotation{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+}
+
+.Rotation{
+-webkit-transform: rotate(360deg);
+animation: rotation 12s linear infinite;
+-moz-animation: rotation 12s linear infinite;
+-webkit-animation: rotation 12s linear infinite;
+-o-animation: rotation 12s linear infinite;
+}
+
+.img{border-radius: 250px;}
+
+</style>
+</head>
+
+<body>
+
+<div class="case-content">
+ 
+<div class="case-item" align="center">
+		<div class="ih-item circle effect1">
+			<a href="http://blog.shineee.win" target="_blank">
+				<div class="spinner"></div>
+				<div class="img"><img src="http://oekt5d96o.bkt.clouddn.com/16-10-6/64457700.jpg" alt="shine"></div>
+				<div class="info">
+					<div class="info-back">
+						<h3>shine</h3>
+						<p><b>you see it</b></p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+    </div>
+<div class="vi">
+    <div class="sidebar">
+    
+            <div class="quote">
+                <p class="quote-text animate-init">时间是让人猝不及防的东西，晴时有风阴有时雨。</p>
+                <p class="quote-author animate-init">金玟崎<strong>《岁月神偷》</strong></p>
+            </div>
+        </div>
+        <div class="menu">
+            <a href="http://github.com/orangeshinee" class="animate-init">Github</a>
+            <a href="http://blog.shineee.win" class="animate-init">Blog</a>
+            <a href="http://weibo.com/an2ning" class="animate-init">WeiBo</a>
+           <a href="http://music.163.com/#/user/home?id=34528905" class="animate-init">Music</a>
+        </div>
+        <div class="location">
+            <i class="location-icon"></i>
+            <span class="location-text animate-init">Wuhan - China</span>
+        </div>
+        </div>
+        <div class="relocating">
+            Navigating to: <span class="relocate-location"></span>...
+        </div>
+    <div class="content">
+        <span class="close">close</span>
+    </div>
+</div>
+<script type="text/javascript" src="assets/vendors/jquery/index.js"></script>
+<script>
+    $(document).ready(function () {
+        var delay = 1;
+        var DELAY_STEP = 200;
+        var animationOptions = { opacity: 1, top: 0};
+
+        $('h1').animate(animationOptions).promise()
+                .pipe(animateMain)
+                .pipe(animateLocationIcon);
+
+        function animateMain() {
+            var dfd = $.Deferred();
+            var els = $('.animate-init');
+            var size = els.size();
+
+            els.each(function (index, el) {
+                delay++;
+                $(el).delay(index * DELAY_STEP)
+                        .animate(animationOptions);
+                (size - 1 === index) && dfd.resolve();
+            });
+            return dfd.promise();
+        }
+
+        function animateLocationIcon() {
+            $('.location-icon').delay(delay * DELAY_STEP).animate({
+                opacity: 1,
+                top: 0
+            }).promise().done(animationQuote);
+        }
+
+        function animationQuote() {}
+
+        $(document.body).on('keydown', function (event) {
+            // Press 'b' key
+            if (event.which === 66) {
+                $('.relocate-location').text('Bookmark Page');
+                $('.relocating').css('opacity', 1);
+
+                window.setTimeout(function () {
+                    window.location.href = '/bookmarks.html';
+                }, 1000);
+            }
+        });
+    });
+</script>
+</body>
+</html>
