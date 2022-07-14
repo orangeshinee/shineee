@@ -1,2 +1,2 @@
 # shineee
-homepage shineee.win
+homepage shineee.site
