@@ -9,10 +9,13 @@
     <link href="assets/css/lrtk.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <style>
-*{margin: 0; padding: 0;}
-
 .ta_c{text-align: center;
 margin-top: 5px;}
+
+@keyframes rotation{
+from {transform: rotate(0deg);}
+to {transform: rotate(360deg);}
+}
 
 @-webkit-keyframes rotation{
 from {-webkit-transform: rotate(0deg);}
@@ -20,6 +23,7 @@ to {-webkit-transform: rotate(360deg);}
 }
 
 .Rotation{
+transform: rotate(360deg);
 -webkit-transform: rotate(360deg);
 animation: rotation 12s linear infinite;
 -moz-animation: rotation 12s linear infinite;
@@ -27,15 +31,7 @@ animation: rotation 12s linear infinite;
 -o-animation: rotation 12s linear infinite;
 }
 
-#beian {
-position:absolute;
-left:50%;
-bottom:0;
-text-align :center;
-}
-
 .img{border-radius: 250px;}
-
 </style>
 </head>
 
@@ -68,8 +64,8 @@ text-align :center;
         </div>
         <div class="menu">
             <a href="http://github.com/orangeshinee" class="animate-init">Github</a>
-            <a href="http://blog.shineee.win" class="animate-init">Blog</a>
-            <a href="http://weibo.com/an2ning" class="animate-init">WeiBo</a>
+            <a href="http://blog.shineee.site" class="animate-init">Blog</a>
+            <a href="https://x.com/shinelovesmile" class="animate-init">Twitter</a>
            <a href="http://music.163.com/#/user/home?id=34528905" class="animate-init">Music</a>
         </div>
         <div class="location">
@@ -112,10 +108,8 @@ text-align :center;
             $('.location-icon').delay(delay * DELAY_STEP).animate({
                 opacity: 1,
                 top: 0
-            }).promise().done(animationQuote);
+            });
         }
-
-        function animationQuote() {}
     });
 </script>
 </body>
