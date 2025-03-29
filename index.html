@@ -1,62 +1,77 @@
 <!doctype html>
 <html>
+
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>~SHINE~</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
     <link href="assets/css/lrtk.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <style>
-.ta_c{text-align: center;
-margin-top: 5px;}
+        .ta_c {
+            text-align: center;
+            margin-top: 5px;
+        }
 
-@keyframes rotation{
-from {transform: rotate(0deg);}
-to {transform: rotate(360deg);}
-}
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
 
-@-webkit-keyframes rotation{
-from {-webkit-transform: rotate(0deg);}
-to {-webkit-transform: rotate(360deg);}
-}
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
-.Rotation{
-transform: rotate(360deg);
--webkit-transform: rotate(360deg);
-animation: rotation 12s linear infinite;
--moz-animation: rotation 12s linear infinite;
--webkit-animation: rotation 12s linear infinite;
--o-animation: rotation 12s linear infinite;
-}
+        @-webkit-keyframes rotation {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
 
-.img{border-radius: 250px;}
-</style>
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        .Rotation {
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            animation: rotation 12s linear infinite;
+            -moz-animation: rotation 12s linear infinite;
+            -webkit-animation: rotation 12s linear infinite;
+            -o-animation: rotation 12s linear infinite;
+        }
+
+        .img {
+            border-radius: 250px;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="case-content">
- 
-<div class="case-item" align="center">
-		<div class="ih-item circle effect1">
-			<a href="http://blog.shineee.win" target="_blank">
-				<div class="spinner"></div>
-				<div class="img"><img src="assets/pics/avatar.png" alt="shine"></div>
-				<div class="info">
-					<div class="info-back">
-						<h3>shine</h3>
-						<p><b>you see it</b></p>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
+    <div class="case-content">
+
+        <div class="case-item" align="center">
+            <div class="ih-item circle effect1">
+                <a href="http://blog.shineee.win" target="_blank">
+                    <div class="spinner"></div>
+                    <div class="img"><img src="assets/pics/avatar.png" alt="shine"></div>
+                    <div class="info">
+                        <div class="info-back">
+                            <h3>shine</h3>
+                            <p><b>you see it</b></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-<div class="vi">
-    <div class="sidebar">
-    
+    <div class="vi">
+        <div class="sidebar">
+
             <div class="quote">
                 <p class="quote-text animate-init">时间是让人猝不及防的东西，晴时有风阴有时雨。</p>
                 <p class="quote-author animate-init">金玟崎<strong>《岁月神偷》</strong></p>
@@ -66,51 +81,52 @@ animation: rotation 12s linear infinite;
             <a href="http://github.com/orangeshinee" class="animate-init">Github</a>
             <a href="http://blog.shineee.site" class="animate-init">Blog</a>
             <a href="https://x.com/shinelovesmile" class="animate-init">Twitter</a>
-           <a href="http://music.163.com/#/user/home?id=34528905" class="animate-init">Music</a>
+            <a href="http://music.163.com/#/user/home?id=34528905" class="animate-init">Music</a>
         </div>
         <div class="location">
             <span class="location-text animate-init">Wuhan - China</span>
         </div>
-        </div>
-        <div class="relocating">
-            Navigating to: <span class="relocate-location"></span>...
-        </div>
+    </div>
+    <div class="relocating">
+        Navigating to: <span class="relocate-location"></span>...
+    </div>
     <div class="content">
         <span class="close">close</span>
     </div>
-</div>
-<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
-    $(document).ready(function () {
-        var delay = 1;
-        var DELAY_STEP = 200;
-        var animationOptions = { opacity: 1, top: 0};
+    </div>
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var delay = 1;
+            var DELAY_STEP = 200;
+            var animationOptions = { opacity: 1, top: 0 };
 
-        $('h1').animate(animationOptions).promise()
+            $('h1').animate(animationOptions).promise()
                 .pipe(animateMain)
                 .pipe(animateLocationIcon);
 
-        function animateMain() {
-            var dfd = $.Deferred();
-            var els = $('.animate-init');
-            var size = els.size();
+            function animateMain() {
+                var dfd = $.Deferred();
+                var els = $('.animate-init');
+                var size = els.size();
 
-            els.each(function (index, el) {
-                delay++;
-                $(el).delay(index * DELAY_STEP)
+                els.each(function (index, el) {
+                    delay++;
+                    $(el).delay(index * DELAY_STEP)
                         .animate(animationOptions);
-                (size - 1 === index) && dfd.resolve();
-            });
-            return dfd.promise();
-        }
+                    (size - 1 === index) && dfd.resolve();
+                });
+                return dfd.promise();
+            }
 
-        function animateLocationIcon() {
-            $('.location-icon').delay(delay * DELAY_STEP).animate({
-                opacity: 1,
-                top: 0
-            });
-        }
-    });
-</script>
+            function animateLocationIcon() {
+                $('.location-icon').delay(delay * DELAY_STEP).animate({
+                    opacity: 1,
+                    top: 0
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>
