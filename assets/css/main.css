@@ -4,7 +4,7 @@
 }
 
 body {
-    font: 16px/1.8 "Lato", "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", arial, sans-serif;
+    font: 16px/1.8 'LXGW WenKai Mono TC', "Lato", "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", arial, sans-serif;
     color: rgb(149, 189, 206);
     background: url('../pics/background.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -54,6 +54,7 @@ ul, ol {
     margin: 40px 0;
     color: rgb(149, 189, 206);
     text-align: center;
+    font-family: 'LXGW WenKai Mono TC', monospace;
 }
 
 .quote::before, .quote::after {
@@ -88,10 +89,24 @@ ul, ol {
     text-align: center
 }
 
+.quote p {
+    font-family: 'LXGW WenKai Mono TC', monospace;
+}
+
+.quote-text {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.quote-author {
+    font-size: 0.9em;
+}
+
 .menu {
     margin-top: 40px;
     text-align: center;
     font-size: 14px;
+    font-family: 'LXGW WenKai Mono TC', monospace;
 }
 
 .menu a {
@@ -100,6 +115,7 @@ ul, ol {
     margin-left: 10px;
     text-decoration: none;
     border-bottom: 1px solid #ccc;
+    font-family: 'LXGW WenKai Mono TC', monospace;
 }
 
 .menu a:hover {
@@ -146,6 +162,7 @@ ul, ol {
     vertical-align: top;
     font-size: 13px;
     line-height: 40px;
+    font-family: 'LXGW WenKai Mono TC', monospace;
 }
 
 .relocating {
@@ -154,12 +171,14 @@ ul, ol {
     font-size: 13px;
     text-align: center;
     transition: all .3s ease;
+    font-family: 'LXGW WenKai Mono TC', monospace;
 }
 
 .content {
     display: none;
     position: relative;
     margin-left: 400px;
+    font-family: 'LXGW WenKai Mono TC', monospace;
 }
 
 .close {
